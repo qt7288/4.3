@@ -1,0 +1,297 @@
+.cal{
+	position: fixed;
+	margin: 0;
+	transform: translateX(23rem);
+	/* transform: translateX(-0.4rem); */
+	right: 0rem;
+	width: 22rem;
+	overflow: hidden;
+	height: 90%;
+	top: 5%;
+	z-index:1001;
+	transition: all .5s;
+	border-radius:10px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	user-select: none;
+	background:rgba(255, 255, 255, 0.2);
+	border:1px solid white;
+	animation: cal 1s linear;
+}
+.timeCardHeader{
+	color: #fff;
+	width: 100%;
+	text-align: center;
+	background: #fff;
+	color: #000;
+	border:0;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+}
+.timeCard{
+	position: relative;
+	width:100%;
+	z-index: 1002;
+	height:20rem;
+	overflow-x:hidden; 
+	box-sizing: border-box;
+	border-radius: 5px;
+	background: rgb(117, 117, 117);
+	transition: all .5s;
+	border-bottom:0;
+}
+
+.timeCard:hover{
+	background: rgba(0, 0, 0, 0.308);
+}
+#timerTime{
+	width: 100%;
+	text-align: center;
+	box-sizing: border-box;
+	position: relative;
+	color: #fff;
+	height: 2rem;
+	line-height: 2rem;
+	font-size: 10px;
+}
+.timerImportant{
+	position: relative;
+	top:28rem;
+	font-size: 12px;
+}
+.timeCt,.Thing{
+	display: inline-block;
+	box-sizing: border-box;
+	height: 2rem;
+	text-align: left;
+	width:49%;
+	transition: all .2s;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.281);
+	color: #fff;
+	line-height: 2rem;
+	white-space:nowrap;
+	 word-break:keep-all; 
+	 overflow:hidden;
+	 padding-left: 5px; 
+	 padding-left: 5px; 
+	 text-overflow:ellipsis; 
+}
+.timeCt:hover,.Thing:hover{
+	background:#A0A0A0;
+	border-radius: 2px;
+	box-sizing: border-box;
+	border:1px solid rgb(255, 255, 255);
+}
+.dateText{
+	text-align: center;
+	width:5rem;
+	top: 30%;
+	border-radius: 8px;
+	height: 3rem;
+	line-height: 3rem;
+	position: fixed;
+	opacity: 0.8;
+	right: 0;
+	box-shadow: 0 0 10px white;
+	z-index: 1002;
+	transition: all .5s;
+	transform: translate(3rem);
+}
+/* .dateText:hover{
+	width: 12rem;
+	transform: rotateY(360deg);
+	color:#fff;
+	background: #000;
+} */
+.dateText:hover~.cal{
+	transform: translateX(22rem);
+}
+
+.dateText img{
+	height: 100%;
+	position:absolute;
+	transition: 0.5s;
+	left: 0;
+}
+
+
+
+/* 
+注释：日历样式
+*/
+.ups,.downs {
+	color:#908c8c;
+	
+}
+sec.calendar {
+	background-color:rgba(59,59,59,.5);
+	font-family:'Dosis',sans-serif;
+	color:#fff;
+	width:18rem;
+	top:2rem;
+	padding:30px;
+	position:absolute;
+	border-radius: 10px;
+}
+.up {
+	float:left !important;
+	user-select: none;
+	padding:0px 5px !important;
+}
+.down {
+	float:right !important;
+	padding:0px 5px !important;
+	user-select: none;
+}
+sec.calendar >.c_float {
+	text-align:center;
+	width:100%;
+	margin:0 0 30px 0;
+}
+sec.calendar .tetle {
+	text-align:center;
+	color:#ffffff;
+	font-size:15px;
+	font-weight:600;
+}
+sec.calendar form {
+	position:relative;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-orient:horizontal;
+	-webkit-box-direction:normal;
+	-webkit-flex-direction:row;
+	-ms-flex-direction:row;
+	flex-direction:row;
+	-webkit-flex-wrap:wrap;
+	-ms-flex-wrap:wrap;
+	flex-wrap:wrap;
+	-webkit-box-align:start;
+	-webkit-align-items:flex-start;
+	-ms-flex-align:start;
+	align-items:flex-start;
+	-webkit-align-content:flex-start;
+	-ms-flex-line-pack:start;
+	align-content:flex-start;
+}
+sec.calendar form label.weekday {
+	display:inline-block;
+	width:25px;
+	margin:8px;
+	text-align:center;
+	color:rgb(255, 255, 255);
+}
+sec.calendar form form {
+	margin:0;
+	padding:0;
+}
+/* 
+	次数修改元素字体大小
+*/
+sec.calendar form label.day {
+	display:inline-block;
+	width:25px;
+	margin:8px;
+	font-size: 10px;
+}
+sec.calendar form label.day span {
+	display:inline-block;
+	width:25px;
+	height:25px;
+	line-height:25px;
+	margin:-2px 0 0 -2px;
+	border-radius:50%;
+	border:1px solid #ffffff42;
+	text-align:center;	
+	/* color: rgb(255, 255, 255); */
+	-webkit-transition:all .2s linear;
+	transition:all .2s linear;
+	/* user-select: none; */
+}
+sec.calendar form label.day span:hover {
+	border-color:#fcfcfc;
+	background:rgba(207, 204, 204, 0.123);
+}
+sec.calendar form label.day span.active {
+	background:rgb(245, 245, 245);
+	color: #000;
+	box-shadow: 0 0 5px white inset,0 0 5px white inset;
+	border:2px solid rgba(236, 236, 236,.5);
+}
+sec.calendar form label.day em {
+	display:inline-block;
+	position:absolute;
+	border-radius:50%;
+	border-color:#29323f;
+	width:3px;
+	height:3px;
+	background-color:#685e02;
+	margin-left:11px;
+	margin-top:2px;
+	opacity:0;
+	-webkit-transition:all .2s linear;
+	transition:all .2s linear;
+}
+sec.calendar form label.day input[type=text] {
+	border:0;
+	opacity:0;
+	position:absolute;
+	margin-top:40px;
+	left:0px;
+	width:18rem;
+	height:1px;
+	padding:0;
+	outline:none;
+	font-size:15px;
+	-webkit-transition:height .2s linear,opacity .2s linear,color .02s linear;
+	transition:height .2s linear,opacity .2s linear,color .02s linear;
+	color:#fff;
+}
+sec.calendar form label.day input[type=text]:focus {
+	opacity:1;
+	height:1rem;
+	padding:10px 40px;
+	left:-45px;
+	width:18rem;
+	color:#29323f;
+}
+sec.calendar form label.day input[type=text]:focus + span {
+	color:#fcee6d;
+	border-color:#00fde8;
+	background:#0db9c5;
+	color:#29323f;
+	font-weight:bold;
+	margin-bottom:65px;
+}
+sec.calendar form label.day input[type=text]:focus ~ em {
+	border-radius:0;
+	border:5px solid transparent;
+	background:transparent;
+	border-bottom-color:white;
+	margin-top:-62px;
+	margin-left:7px;
+	width:0;
+	height:0;
+	display:inline-block;
+	opacity:1;
+}
+sec.calendar form label.day input[type=text]:valid ~ em {
+	display:inline-block;
+	opacity:1;
+}
+sec.calendar form label.day.invalid {
+	opacity:0;
+	width:25px;
+	height:25px;
+}
+sec.calendar form label.day.invalid span,sec.calendar form label.day.invalid input {
+	display:none;
+}
+sec.calendar div.clearfix {
+	clear:both;
+}
+sec.calendar div.hidden {
+	display:none;
+}

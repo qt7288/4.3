@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8"/>
+</head>
+<body>
+	
+		<!-- <input type="text" id="uname"> -->
+
+	<input type="button" value="获取用户列表" onclick="postuser()">
+	<div id="dd"></div>
+	<script>
+		function postuser(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+				if(xhr.readyState==4 && xhr.status==200){
+					var result=xhr.responseText;
+					//保存的是json字符串
+					//转换成js对象数组
+					var arr=JSON.parse(result);
+					//console.log(arr);
+					//可以使用js对象所有的api去操作
+					for(var i=0;i<arr.length;i++){
+						for(var j in arr[i]){
+							dd.innerHTML+='<tr>'+arr[i][j]+'<tr>';
+							
+						}
+					}
+					
+					}
+					
+			}
+			//demo/postlogin
+			var url="/demo/postuser";
+			//打开链接，创建请求
+			xhr.open("get",url,true);
+		//open-send之间由于默认请求是text/plain，无法传递特殊符号，&
+			//xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			//var formdata="uname="+uname.value;
+			//console.log(formdata);
+			//console.log(uname.value);
+			xhr.send();
+			//发送请求	
+				}
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<title>post传递</title>
+<meta charset="utf-8"/>
+</head>
+<body>
+		<div>
+		<input type="text" id="uname">	
+	</div>
+	<div>
+		<input type="password" id="upwd">
+	</div>
+	<input type="button" value="denglu" onclick="postlogin()">
+	<div id="cc"></div>
+	<script>
+		function postlogin(){
+			//创建异步请求
+			var xhr=new XMLHttpRequest();
+			//绑定监听
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					var result=xhr.responseText;
+					cc.innerHTML=result;
+					}
+			}
+			//demo/postlogin
+			var url="/demo/postlogin";
+			//打开链接，创建请求
+			xhr.open("post",url,true);
+			
+
+			//open-send之间由于默认请求是text/plain，无法传递特殊符号，&
+			xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+
+
+			var formdata="uname="+uname.value+"&upwd="+upwd.value;
+			//console.log(formdata);
+			xhr.send(formdata);
+			//发送请求
+		
+		}
+	
+	</script>
+</body>
+</html>

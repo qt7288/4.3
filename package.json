@@ -1,0 +1,26 @@
+{
+  "name": "4.3",
+  "version": "1.0.0",
+  "description": "dog",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qt7288/4.3.git"
+  },
+  "keywords": [
+    "mfeng"
+  ],
+  "author": "qjt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qt7288/4.3/issues"
+  },
+  "homepage": "https://github.com/qt7288/4.3#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}

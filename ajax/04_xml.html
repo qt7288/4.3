@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8"/>
+</head>
+<body>
+	<input type="button" value="异步获取xml数据" onclick="getXML()">
+	<div id="aa"></div>
+	<script>
+	function getXML(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4&&xhr.status==200){
+				var result=xhr.responseXML;
+				//获取studentlist标签
+				//result就是studentlist的标签 
+				var htmlcode="<table border='1px'>"
+				var students=result.getElementsByTagName('student');
+				//使用上述方法得到内部这个标签组成的数组
+				for(var i=0;i<students.length;i++){
+					///for(var j in students){
+						var	name=students[i].getElementsByTagName('name')[0];
+						var	age=students[i].getElementsByTagName('age')[0];
+						var	gender=students[i].getElementsByTagName('gender')[0];
+
+					//}
+				
+					htmlcode+='<tr><td>'+name.innerHTML+'</td>'+'<td>'+age.innerHTML+'</td><td>'+gender.innerHTML+'</td></tr>';
+					//console.log(students.length);
+			
+				}
+					htmlcode+='</table>';
+					aa.innerHTML=htmlcode;
+			}
+		}
+		xhr.open("get","student.xml",true);
+		xhr.send();	
+	}
+	</script>
+</body>
+	
+</html>

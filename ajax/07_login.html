@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8"/>
+</head>
+<body>
+	<div>
+		<input type="text" id="uname">	
+	</div>
+	<div>
+		<input type="password" id="upwd">
+	</div>
+	<input type="button" value="denglu" onclick="login()">
+	<script>
+		function login(){
+			//创建异步请求
+			var xhr=new XMLHttpRequest();
+			//绑定监听
+			xhr.onreadystatechange=function(){
+				if(xhr.readeState==4&&xhr.status==200){
+					var result=xhr.responseText;
+					alert(result);
+					}
+			
+			}
+			var url="/demo/getlogin?uname="+uname.value+"&upwd="+upwd.value;
+			//打开链接，创建请求
+			xhr.open("get",url,true);
+			xhr.send();
+			//发送请求
+		
+		}
+	
+	</script>
+</body>
+
+</html>

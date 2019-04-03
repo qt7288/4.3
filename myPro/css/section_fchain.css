@@ -1,0 +1,111 @@
+section{
+    width:60%;
+    position: relative;
+    margin: auto;
+    height: auto;
+    border-radius: 5px;
+    overflow: hidden;
+    top: 2rem;
+}
+body{
+    background-color:rgb(255, 255, 255);
+    background: url(https://taotao2019.applinzi.com/img/inedx01.jpg) no-repeat fixed;
+    background-position: 0% 100%;
+}
+@media screen and (max-width:1024px){
+    section{
+        width:90%;
+    }
+    
+    .shareU-div ul{
+        padding-left:20px !important;
+    }
+    #header-h{
+        height: 65%;
+    }
+    #header-h>ul>li{
+        margin-top: 1rem;
+    }
+}
+/* 
+链接分享头信息
+*/
+.share{
+    width: 100%;
+    background:rgb(59,59,59);
+    box-sizing: border-box;
+    border-bottom:1px solid rgb(170, 169, 169);
+    height: 2rem;
+    color: #fff;
+    line-height: 2rem;
+    font-weight:bold;
+    display: flex;
+    overflow: hidden;
+    padding:0 3rem;
+
+}
+.share p{
+    font-size:0.5rem;
+    text-align: left;
+    width: 50%;
+}
+.share p:last-child{
+    font-size:0.5rem;
+    width: 50%;
+    text-align: right;
+    font-weight: normal;
+}
+/* 
+    链接分享主体
+*/
+.shareU-div{
+    width: 100%;
+    height:25rem;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.3);
+}
+.shareU-div ul{
+    width: 100%;
+    padding: 15px;
+    padding-left: 40px;
+}
+.shareU-ul li{
+    margin-right: 20px;
+    margin-bottom: 10px;
+    float: left;
+    border-radius: 2px;
+    box-sizing: border-box;
+    width:10rem;
+    font-size: 10px;
+    line-height: 2rem;
+    height: 2rem;
+    text-align: center;
+    border:1px solid rgb(179, 178, 178);
+    background: rgba(250, 250, 250, 0.644);
+    box-shadow: 2px 1px 3px rgba(255, 255, 255, 0.288),
+                -2px 1px 3px rgba(255, 255, 255, 0.26)
+            ;
+}
+.shareU-ul li:hover{
+    background: #000;
+    color: #fff;
+    border:1px solid white;
+    box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.288),
+    -2px 1px 3px rgba(0, 0, 0, 0.26)
+;
+}
+.shareU-ul a{
+    color: #000;
+}
+.shareU-ul>li:hover a{
+    color: rgb(255, 255, 255);
+}
+/* 
+注释：累加header#header-b>h2
+*/
+#header-b>h2{
+    font-size: 1rem;
+}
+#header-b{
+    display: block;
+}
