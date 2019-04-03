@@ -29,7 +29,7 @@ server.use(cors({
 //3.2 配置静态资源目录 public
 server.use(express.static("public"));
 //4:为express对象绑定监听端口 3000
-server.listen(3000);
+server.listen(5050);
 
 // 3.11加载 模块 express-session
 const session = require("express-session");

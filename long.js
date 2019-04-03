@@ -18,10 +18,10 @@ var server=express();
 server.use(cors({
 	origin:["http://172.242.3.181:8080",
 	"http://localhost:8080",
-	"http://172.242.3.181:7777"],
+	"http://172.242.3.181:5050"],
 	credentials:true
   }));
-server.listen(7777);
+server.listen(5050);
 //托管静态文件
 server.use(express.static('./public'));
 server.use(express.static('./ajax'));
