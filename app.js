@@ -9,10 +9,12 @@ const cors = require("cors");
 
 //2:创建连接池 很大提高效率方法
 var pool = mysql.createPool({
-    host:"127.0.0.1",
-    user:"root",
-    password:"",
-    database:"qz"
+  host     : process.env.MYSQL_HOST,
+  port     : process.env.MYSQL_PORT,
+  user     : process.env.ACCESSKEY,
+  password : process.env.SECRETKEY,
+  database : 'app_' + process.env.APPNAME,
+  connectionLimit:3
 });
 //3:创建express对象
 var server = express();
